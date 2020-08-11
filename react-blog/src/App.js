@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Navbar from './components/layout/Navbar'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
+import Dashboard from './components/dashboard/Dashboard';
+import PostDetails from './components/posts/PostDetails'
 
 class App extends Component{
   
@@ -8,6 +10,10 @@ class App extends Component{
     <BrowserRouter>
     <div className="App">
       <Navbar />
+      <Switch>
+        <Route exact path='/' component={Dashboard} />
+        <Route path='/post/:id' component={PostDetails} />
+      </Switch>
     </div>
     </BrowserRouter>
   );
