@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PostList from '../posts/PostList';
+import MyPostList from '../posts/MyPostList';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 
 
-class Dashboard extends Component{
+class MyPosts extends Component{
     render(){
         
         const { posts } = this.props; 
@@ -14,7 +14,7 @@ class Dashboard extends Component{
             <div className="dashboard container">
                 <div className="row">
                     <div className="col s12 m6">
-                        <PostList posts={posts} />
+                        <MyPostList posts={posts} author={this.props.auth.uid}/>
                     </div>
                 </div>
             </div>
@@ -24,8 +24,8 @@ class Dashboard extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.firestore.ordered.posts
-        //auth: state.firebase.auth
+        posts: state.firestore.ordered.posts,
+        auth: state.firebase.auth
     }
 }
 
@@ -34,4 +34,4 @@ export default compose(
     firestoreConnect([
         {collection: 'posts'}
     ])
-)(Dashboard); 
+)(MyPosts); 

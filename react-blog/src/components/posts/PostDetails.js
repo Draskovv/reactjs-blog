@@ -7,9 +7,8 @@ import moment from 'moment';
  
 
 function PostDetails(props) {
-    
+
     function handleDelete (e){
-        console.log(props)
         const { id } = props;
         e.preventDefault();
         props.deletePost(id);
@@ -17,8 +16,6 @@ function PostDetails(props) {
     }
 
     const {post , auth} = props;
-
-
 
     if(post){
         if(post.authorId === auth.uid){
