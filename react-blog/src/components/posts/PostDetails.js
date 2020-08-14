@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { deletePost } from '../../store/actions/postActions';
+import moment from 'moment';
  
 
 function PostDetails(props) {
@@ -29,7 +30,7 @@ function PostDetails(props) {
                     </div>
                     <div className="card-action grey lighten-4 grey-text">
                     <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
-                        <div>01.01.2020, 1m</div>
+                        <div>{ moment(post.createdAt.toDate()).calendar() }</div>
                     </div>
                 </div>
                 <div className="input-field">
@@ -50,7 +51,7 @@ function PostDetails(props) {
                         </div>
                         <div className="card-action grey lighten-4 grey-text">
                         <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
-                            <div>01.01.2020, 1m</div>
+                        <div> { moment(post.createdAt.toDate()).calendar() } </div>
                         </div>
                     </div>
                 </div>
