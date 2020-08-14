@@ -7,15 +7,17 @@ const MyPostList = ({posts , author}) => {
   
     return (
         <div className="post-list section">
-           {posts && posts.map(post => {
-                if(post.authorId === author)
-                {
+           {posts && posts.filter(post => {
+               return post.authorId === author
+           }).map(post => {
+                // if(post.authorId === author)
+                // {
                     return (
                    <Link to={'/post/' + post.id} key={post.id} >
                         <PostSummary post={post}/>
                    </Link>
                )
-             }
+             //}
            })}
         </div>
     )
