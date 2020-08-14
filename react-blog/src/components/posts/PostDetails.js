@@ -7,7 +7,7 @@ import moment from 'moment';
  
 
 function PostDetails(props) {
- 
+    
     function handleDelete (e){
         console.log(props)
         const { id } = props;
@@ -17,6 +17,8 @@ function PostDetails(props) {
     }
 
     const {post , auth} = props;
+
+
 
     if(post){
         if(post.authorId === auth.uid){
@@ -61,7 +63,7 @@ function PostDetails(props) {
     }
     else{
         return (
-            <div className='container center'>
+            <div className='container  center'>
                 <p>Loading post...</p>
             </div>
         )
@@ -74,13 +76,11 @@ const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id;
     const posts = state.firestore.data.posts;
     const post = posts ? posts[id] : null;
-    
 
     return {
         post: post,
         id:id,
         auth: state.firebase.auth
-
     }
 }
 
