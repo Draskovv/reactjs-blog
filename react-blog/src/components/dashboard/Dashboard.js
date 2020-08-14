@@ -29,6 +29,7 @@ class Dashboard extends Component{
 const mapStateToProps = (state) => {
     return {
         posts: state.firestore.ordered.posts
+        //auth: state.firebase.auth
     }
 }
 
