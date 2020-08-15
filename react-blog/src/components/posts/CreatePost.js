@@ -6,7 +6,8 @@ import { Redirect } from 'react-router-dom';
 class CreatePost extends Component {
     state = {
         title: '',
-        content: ''
+        content: '',
+        imgUrl: ''
     }
     handleChange = (e) => {
         this.setState({
@@ -30,6 +31,10 @@ class CreatePost extends Component {
                     <div className="input-field">
                         <label htmlFor="title">Title</label>
                         <input type="text" id="title" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="imgUrl">Image URL</label>
+                        <input type="text" id="imgUrl" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
                         <label htmlFor="content">Post Content</label>

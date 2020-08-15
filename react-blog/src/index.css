@@ -39,3 +39,7 @@ textarea.materialize-textarea:focus:not([readonly]){
   border-color: lightblue;
   box-shadow: none;
 }
+
+.post-summary{
+  border: 1px  solid lightblue;
+}

@@ -23,8 +23,9 @@ function PostDetails(props) {
             return(
             <div className="container section post-details">
                 <div className="card z-depth-0">
-                    <div className="card-content">
+                    <div className="card-content center">
                         <span className="card-title">{ post.title }</span>
+                        <img src={post.imgUrl} alt=""/>
                         <p>{ post.content }</p>
                     </div>
                     <div className="card-action grey lighten-4 grey-text">
@@ -46,6 +47,7 @@ function PostDetails(props) {
                     <div className="card z-depth-0">
                         <div className="card-content">
                             <span className="card-title">{ post.title }</span>
+                            <img src={post.imgUrl} alt="" className="right" />
                             <p>{ post.content }</p>
                         </div>
                         <div className="card-action grey lighten-4 grey-text">
