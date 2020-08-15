@@ -24,11 +24,11 @@ function PostDetails(props) {
             <div className="container section post-details">
                 <div className="card z-depth-0">
                     <div className="card-content center">
-                        <span className="card-title">{ post.title }</span>
                         <img src={post.imgUrl} alt=""/>
+                        <span className="card-title">{ post.title }</span>
                         <p>{ post.content }</p>
                     </div>
-                    <div className="card-action grey lighten-4 grey-text">
+                    <div className="card-action grey lighten-4 grey-text center">
                     <div>Posted by {post.authorFirstName} {post.authorLastName}</div>
                         <div>{ moment(post.createdAt.toDate()).calendar() }</div>
                     </div>

@@ -43,3 +43,9 @@ textarea.materialize-textarea:focus:not([readonly]){
 .post-summary{
   border: 1px  solid lightblue;
 }
+
+img{
+  width: 400px;
+  height: 250px;
+  border: 1px solid lightblue;
+}
