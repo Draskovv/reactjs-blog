@@ -27,9 +27,9 @@ import { Redirect } from 'react-router-dom';
 
 class EditPost extends Component {
     state = {
-        title: '',
-        content: '',
-        imgUrl: '',
+        title: this.props.post.title,
+        content: this.props.post.content,
+        imgUrl: this.props.post.imgUrl,
         id: this.props.id
     }
     handleChange = (e) => {
@@ -43,7 +43,7 @@ class EditPost extends Component {
     }
     render() {
 
-        const { auth , post} = this.props;
+        const { auth } = this.props;
         if(!auth.uid) return <Redirect to='/signin'/>
         return (
             <div className="container">
@@ -51,15 +51,15 @@ class EditPost extends Component {
                     <h5 className="grey-text text-darken-3">Edit post</h5>
                     <div className="input-field">
                         <label htmlFor="title">Title</label>
-                        <input type="text" id="title" onChange={this.handleChange} required/>
+                        <input type="text" id="title" onChange={this.handleChange} required value={this.state.title}/>
                     </div>
                     <div className="input-field">
                         <label htmlFor="imgUrl">Image URL</label>
-                        <input type="text" id="imgUrl" onChange={this.handleChange} required/>
+                        <input type="text" id="imgUrl" onChange={this.handleChange} required value={this.state.imgUrl}/>
                     </div>
                     <div className="input-field">
                         <label htmlFor="content">Post Content</label>
-                        <textarea id="content" className="materialize-textarea" onChange={this.handleChange} required></textarea>
+                        <textarea id="content" className="materialize-textarea" onChange={this.handleChange} required value={this.state.content}></textarea>
                     </div>
                     <div className="input-field">
                         <button className="btn lightblue lighten-1 z-depth-0 right">Edit</button>
