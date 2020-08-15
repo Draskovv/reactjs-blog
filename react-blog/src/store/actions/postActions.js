@@ -29,4 +29,20 @@ export const deletePost = id => {
           dispatch({ type: 'DELETE_POST_ERROR', err })
       })
     }
-  };
+};
+
+export const editPost = (post) =>{
+  return (dispatch, getState , {getFirebase , getFirestore}) => {
+    const firestore = getFirestore();
+
+    console.log(post.id)
+
+    firestore.collection('posts').doc(post.id).update({
+      ...post
+    }).then(() => {
+        dispatch({type: 'EDIT_POST_SUCCESS', post})
+    }).catch((err) => {
+        dispatch({type: 'EDIT_POST_ERROR', err})
+    })
+}
+};

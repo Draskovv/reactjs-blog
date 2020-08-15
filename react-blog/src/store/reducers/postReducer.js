@@ -15,10 +15,15 @@ const postReducer = (state = initState, action) => {
             console.log('create post error' , action.err);
             return state;
         case 'DELETE_PROJECT':
-            console.log('delete project');
+            console.log('delete post');
             return state;
         case 'DELETE_PROJECT_ERROR':
-            console.log('delete project error', 'state: ', state, 'action: ', action.project);
+            console.log('delete post error', 'state: ', state, 'action: ', action.project);
+            return state;
+        case 'EDIT_POST_SUCCESS':
+            return state;
+        case 'EDIT_POST_ERROR':
+            console.log('delete post error', 'state: ', state, 'action: ', action.project);
             return state;
         default: 
             return state;
