@@ -35,8 +35,6 @@ export const editPost = (post) =>{
   return (dispatch, getState , {getFirebase , getFirestore}) => {
     const firestore = getFirestore();
 
-    console.log(post.id)
-
     firestore.collection('posts').doc(post.id).update({
       ...post
     }).then(() => {
