@@ -1,4 +1,4 @@
-# Simple react blog crud app
+# ReactJs blog crud app
 
 ## Project setup
 ```
@@ -8,7 +8,7 @@ npm install
 ```
 npm start 
 ```
-##Prewiew
+## Prewiew
 
 https://react-blog-69777.firebaseapp.com/
 
